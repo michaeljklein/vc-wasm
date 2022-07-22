@@ -1,0 +1,12 @@
+[package]
+name = "vc-wasm-2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.58"
+chrono = "0.4.19"
+tokio = { version = "1.20.0", features = ["full"] }
+serde_json = "1.0.82"
+ssi = "0.4.0"
+wasmer = "2.3.0"
