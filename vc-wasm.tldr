@@ -1,0 +1,38 @@
+base <https://example.com/>;
+use <http://www.w3.org/2001/XMLSchema#> as xs;
+
+/// let vc_str = r###"{
+///     "@context": [
+///         "https://www.w3.org/2018/credentials/v1",
+///         "https://www.w3.org/2018/credentials/examples/v1"
+///     ],
+///     "id": "http://example.org/credentials/192783",
+///     "type": "VerifiableCredential",
+///     "issuer": "did:example:foo",
+///     "issuanceDate": "2020-08-25T11:26:53Z",
+///     "credentialSubject": {
+///         "id": "did:example:a6c78986cc36418b95a22d7f736",
+///     }
+/// }"###;
+
+/// VC WASM type
+type VC {
+  /// "@context"
+  context: required Context,
+  id: required xs:string,
+  type: required xs:string,
+  issuer: required xs:string,
+  issuanceDate: required xs:string,
+  credentialSubject: required CredentialSubject
+}
+
+type Context {
+  /// "https://www.w3.org/2018/credentials/v1",
+  /// "https://www.w3.org/2018/credentials/examples/v1"
+  dummyField: required xs:string
+}
+
+type CredentialSubject {
+  id: required xs:string,
+}
+
